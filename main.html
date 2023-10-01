@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 - Airport</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Add Bootstrap JavaScript and jQuery (Optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom CSS for styling -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="js/table.js"></script>
+
+</head>
+<body>
+<div class="container mt-4">
+    <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tab1">Table Information</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab2">Airplane</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab3">Test</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab4">Group 3</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab1" class="tab-pane fade show active">
+            <h2>Tables</h2>
+            <div id="tables"></div>
+        </div>
+
+        <div id="tab2" class="tab-pane fade">
+            <h2>Airplanes</h2>
+            <div id="addAirplane" class="mt-4">
+                <h3>Add Airplane</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="registrationNumber">Registration Number:</label>
+                        <input type="text" class="form-control" id="registrationNumber" placeholder="Enter Registration Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="modelSelect">Select Model:</label>
+                        <select class="form-control" id="modelSelect">
+                            <!-- Add options dynamically using JavaScript -->
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="addAirplane()">Add Airplane</button>
+                </form>
+            </div>
+            <hr>
+            <div id="removeAirplane">
+                <h3>Remove Airplane</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="removeRegistrationNumber">Registration Number:</label>
+                        <input type="text" class="form-control" id="removeRegistrationNumber" placeholder="Enter Registration Number">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="removeAirplane()">Remove Airplane</button>
+                </form>
+            </div>
+            <hr>
+            <div id="airplanes"></div>
+        </div>
+
+        <div id="tab3" class="tab-pane fade">
+            <h2>Test</h2>
+            <h2>Add Test</h2>
+            <div class="form-group">
+                <label for="testDate">Date:</label>
+                <input type="text" class="form-control" id="testDate" placeholder="Date">
+            </div>
+            <div class="form-group">
+                <label for="testHours">Hours Worked:</label>
+                <input type="text" class="form-control" id="testHours" placeholder="Hours Worked">
+            </div>
+            <div class="form-group">
+                <label for="testScore">Score:</label>
+                <input type="text" class="form-control" id="testScore" placeholder="Score">
+            </div>
+            <div class="form-group">
+                <label for="addTestAirplane">Select Airplane:</label>
+                <select class="form-control" id="addTestAirplane" onchange="populateTechnicians()">
+                    <option value="" disabled selected>Select an Airplane</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="form-group" id="addTestTechnicianGroup" style="display: none;">
+                <label for="addTestTechnician">Select Technician:</label>
+                <select class="form-control" id="addTestTechnician">
+                    <option value="" disabled selected>Select a Technician</option>
+                    <!-- This dropdown will be dynamically populated based on the selected airplane -->
+                </select>
+            </div>
+        <button type="button" class="btn btn-primary" onclick="addTest()">Add Test</button>
+
+            <div id="test"></div>
+        </div>
+        <div id="tab4" class="tab-pane fade">
+            <h3>Group 3</h3>
+            <p>Andy M</p>
+            <p>Gilbert H</p>
+            <p>Sebastian K</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
